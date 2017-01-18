@@ -1,11 +1,11 @@
-<h1>All Articles</h1>
+      <h3>All Articles</h3>
 
-<% @articles.each do |article| %>
-  <div id= <%= "post_#{article.id}" %> title= "<%= article.hover_text %>" >
-    <%= image_tag article.image.url(:original) %>
-    <h3><%= link_to article.title, article_path(article), class: 'article_title' %></h3>
-    <p><%= article.body %><%= link_to "read more", article_path(article) %></p>
-  </div>
-<% end %>
+      <% @articles.each do |article| %>
+        <div id= <%= "post_#{article.id}" %> title= "<%= article.hover_text %>" >
+          <%= image_tag article.image.url(:original) %>
+          <h3><%= link_to article.title, article_path(article), class: 'article_title' %></h3>
+          <p><%= article.body %><%= link_to "read more", article_path(article) %></p>
+        </div>
+      <% end %>
 
-<%= link_to "Create a New Article", new_article_path, class: 'new_article' %>
+      <%= link_to "Create a New Article", new_article_path, class: 'new_article' %>

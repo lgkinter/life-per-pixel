@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html>
+<html lang='en'>
   <head>
-    <title>Blog</title>
-    <%= csrf_meta_tags %>
 
+    <!-- Meta Tags & Title -->
+    <title>Life Per Pixel</title>
+    <%= csrf_meta_tags %>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="images/favicon.ico" rel="icon" type="image/x-icon">
+
+    <!-- Stylesheets -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300">
+
+    <!-- Javascript  -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
   </head>
 
   <body>
-    <p class="flash"><%= flash.notice %></p>
-    <%= yield %>
+
+    <nav class="navbar navbar-default" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+    			<a id="menu-toggle" href="#" class="navbar-toggle">
+    				<span class="sr-only">Toggle navigation</span>
+    			  <span class="icon-bar"></span>
+    			  <span class="icon-bar"></span>
+    			  <span class="icon-bar"></span>
+    			</a>
+          <%= image_tag 'lifelogo_50_gray.png', class: "minilogo" %>
+    		</div>
+        <div id="sidebar-wrapper" class="navbar navbar-fixed-left sidebar-toggle">
+          <br>
+          <%= link_to image_tag('lifelogo_125_gray.png', class: "logo"), root_path %>
+          <ul class="sidebar-nav">
+            <li><a href='#'><div class='mindsq pixel'></div>Mind</a></li>
+            <li><a href='#'><div class='bodybar'></div><div class='bodysq pixel'></div>Body</a></li>
+            <li><a href='#'><div class='soulbar'></div><div class='soulsq pixel'></div>Soul</a></li>
+            <li><a href='#'><div class='propbar'></div><div class='propsq pixel'></div>Prosperity</a></li>
+          </ul>
+          <div class="grid"></div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class='row'>
+
+        <div class='col-md-10 content'>
+          <p class="flash"><%= flash.notice %></p>
+          <%= yield %>
+        </div>
+
+        <div class='col-md-2 col-md-offset-10 right-sidebar'>
+          <br>
+          <div class='about'>
+            <a href='#'><%= image_tag 'LS_150W.png' %></a>
+          </div>
+          <div class='categories'>
+            <h3>Categories</h3>
+            <ul>
+              <li><a href='#'><div class='pixel' style='background-color: #4bcab7;'></div>Popular</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #9E75AB;'></div>Relationships</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #F3D850;'></div>Happiness</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #78e0e1;'></div>Spirituality</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #df0059;'></div>Finance</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #1e60aa;'></div>Health</a></li>
+              <li><a href='#'><div class='pixel' style='background-color: #ef80ac;'></div>Creativity</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </body>
 </html>

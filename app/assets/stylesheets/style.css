@@ -14,7 +14,7 @@ body {
 .navbar-header {
   position: fixed;
   width: 100%;
-  background-image: url("../images/heartbackground_240_10.jpg");
+  background-image: url("heartbackground_240_10.jpg");
   z-index: 1;
 }
 
@@ -43,7 +43,7 @@ body {
   border-radius: 0;
   left: -240px;
   height: 100%;
-  background-image: url("../images/heartbackground_240_10.jpg");
+  background-image: url("heartbackground_240_10.jpg");
   z-index: 2;
 }
 
@@ -133,7 +133,7 @@ html, body, .container-fluid, .row {
 .content {
   line-height: 30px;
   hyphens: auto;
-  font-family: 'Gotham', helvetica;
+  font-family: 'Open Sans', helvetica;
   word-wrap: break-word;
 }
 
