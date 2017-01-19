@@ -10,9 +10,14 @@ Rails.application.routes.draw do
   get '/soul', to: 'articles#soul'
   get '/prosperity', to: 'articles#prosperity'
 
+  resources :author_sessions, only: [:new, :create, :destroy]
+  get 'login', to: 'author_sessions#new'
+  get 'logout', to: 'author_sessions#destroy'
+
   resources :articles, path: :pixels do
     resources :comments
   end
   resources :tags, param: :name
+  resources :authors
 
 end

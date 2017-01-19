@@ -58,6 +58,10 @@
 
         <div class='col-md-2 col-md-offset-10 right-sidebar'>
           <br>
+          <% if logged_in? %>
+            Admin mode
+            <%= link_to "(logout)", logout_path %>
+          <% end %>
           <div class='about'>
             <%= link_to image_tag('LS_150W.png'), about_path %>
           </div>
