@@ -38,10 +38,10 @@
           <br>
           <%= link_to image_tag('lifelogo_125_gray.png', class: "logo"), root_path %>
           <ul class="sidebar-nav">
-            <li><a href='#'><div class='mindsq pixel'></div>Mind</a></li>
-            <li><a href='#'><div class='bodybar'></div><div class='bodysq pixel'></div>Body</a></li>
-            <li><a href='#'><div class='soulbar'></div><div class='soulsq pixel'></div>Soul</a></li>
-            <li><a href='#'><div class='propbar'></div><div class='propsq pixel'></div>Prosperity</a></li>
+            <li><%= link_to mind_path do %><div class='mindsq pixel'></div>Mind<% end %></li>
+            <li><%= link_to body_path do %><div class='bodybar'></div><div class='bodysq pixel'></div>Body<% end %></li>
+            <li><%= link_to soul_path do %><div class='soulbar'></div><div class='soulsq pixel'></div>Soul<% end %></li>
+            <li><%= link_to prosperity_path do %><div class='propbar'></div><div class='propsq pixel'></div>Prosperity<% end %></li>
           </ul>
           <div class="grid"></div>
         </div>
@@ -59,18 +59,18 @@
         <div class='col-md-2 col-md-offset-10 right-sidebar'>
           <br>
           <div class='about'>
-            <a href='#'><%= image_tag 'LS_150W.png' %></a>
+            <%= link_to image_tag('LS_150W.png'), about_path %>
           </div>
           <div class='categories'>
             <h3>Categories</h3>
             <ul>
-              <li><a href='#'><div class='pixel' style='background-color: #4bcab7;'></div>Popular</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #9E75AB;'></div>Relationships</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #F3D850;'></div>Happiness</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #78e0e1;'></div>Spirituality</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #df0059;'></div>Finance</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #1e60aa;'></div>Health</a></li>
-              <li><a href='#'><div class='pixel' style='background-color: #ef80ac;'></div>Creativity</a></li>
+              <li><%= link_to tag_path('popular') do %><div class='pixel' style='background-color: #4bcab7;'></div>Popular<% end %></li>
+              <li><%= link_to tag_path('relationships') do %><div class='pixel' style='background-color: #9E75AB;'></div>Relationships<% end %></li>
+              <li><%= link_to tag_path('happiness') do %><div class='pixel' style='background-color: #F3D850;'></div>Happiness<% end %></li>
+              <li><%= link_to tag_path('spirituality') do %><div class='pixel' style='background-color: #78e0e1;'></div>Spirituality<% end %></li>
+              <li><%= link_to tag_path('finance') do %><div class='pixel' style='background-color: #df0059;'></div>Finance<% end %></li>
+              <li><%= link_to tag_path('health') do %><div class='pixel' style='background-color: #1e60aa;'></div>Health<% end %></li>
+              <li><%= link_to tag_path('creativity') do %><div class='pixel' style='background-color: #ef80ac;'></div>Creativity<% end %></li>
             </ul>
           </div>
         </div>

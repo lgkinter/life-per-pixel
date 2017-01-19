@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function(){
     }else{
       $.ajax({
           type: 'HEAD',
-          url: "http://" + window.location.host + '/articles/' + id,
+          url: "http://" + window.location.host + '/pixels/' + id,
           success: function() {
               location.href = id;
           },

@@ -40,4 +40,20 @@ class ArticlesController < ApplicationController
     redirect_to article_path(@article)
   end
 
+  def mind
+    @articles = Article.where(category: 'mind')
+  end
+
+  def body
+    @articles = Article.where(category: 'body')
+  end
+
+  def soul
+    @articles = Article.where(category: 'soul')
+  end
+
+  def prosperity
+    @articles = Article.where(category: 'prosperity')
+  end
+
 end
