@@ -1,7 +1,7 @@
 <%= form_for(@article, html: {multipart: true}) do |f| %>
-  <% if author.errors.any? %>
+  <% if @article.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <h3><%= pluralize(@article.errors.count, "error") %> prohibited this pixel from being saved:</h3>
 
       <ul>
       <% @article.errors.full_messages.each do |message| %>
@@ -10,7 +10,10 @@
       </ul>
     </div>
   <% end %>
-
+  <p>
+    <%= f.label :id %><br>
+    <%= f.text_field :id %>
+  </p>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
@@ -37,6 +40,6 @@
   </p>
 
   <p>
-    <%= f.submit %>
+    <%= f.submit "Create Pixel" %>
   </p>
 <% end %>

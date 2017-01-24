@@ -1,3 +1,4 @@
-<h3><%= @tag.name.upcase %></h3>
+<% provide(:title, "#{@tag.name.capitalize} | Life Per Pixel") %>
+<h1><%= @tag.name.upcase %></h1>
 
 <%= render partial: 'articles/listing' %>

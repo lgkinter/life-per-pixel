@@ -1,9 +1,10 @@
+<% provide(:title, "Life Per Pixel") %>
 <!DOCTYPE html>
 <html lang='en'>
   <head>
 
     <!-- Meta Tags & Title -->
-    <title>Life Per Pixel</title>
+    <title><%= yield(:title) %></title>
     <%= csrf_meta_tags %>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -18,6 +19,9 @@
     <!-- Javascript  -->
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <!-- RSS -->
+    <%= auto_discovery_link_tag :rss, articles_url(:format => :rss) %>
 
   </head>
 
@@ -56,26 +60,36 @@
           <%= yield %>
         </div>
 
-        <div class='col-md-2 col-md-offset-10 right-sidebar'>
-          <br>
-          <% if logged_in? %>
-            Admin mode
-            <%= link_to "(logout)", logout_path %>
-          <% end %>
-          <div class='about'>
-            <%= link_to image_tag('LS_150W.png'), about_path %>
-          </div>
-          <div class='categories'>
-            <h3>Categories</h3>
-            <ul>
-              <li><%= link_to tag_path('popular') do %><div class='pixel' style='background-color: #4bcab7;'></div>Popular<% end %></li>
-              <li><%= link_to tag_path('relationships') do %><div class='pixel' style='background-color: #9E75AB;'></div>Relationships<% end %></li>
-              <li><%= link_to tag_path('happiness') do %><div class='pixel' style='background-color: #F3D850;'></div>Happiness<% end %></li>
-              <li><%= link_to tag_path('spirituality') do %><div class='pixel' style='background-color: #78e0e1;'></div>Spirituality<% end %></li>
-              <li><%= link_to tag_path('finance') do %><div class='pixel' style='background-color: #df0059;'></div>Finance<% end %></li>
-              <li><%= link_to tag_path('health') do %><div class='pixel' style='background-color: #1e60aa;'></div>Health<% end %></li>
-              <li><%= link_to tag_path('creativity') do %><div class='pixel' style='background-color: #ef80ac;'></div>Creativity<% end %></li>
-            </ul>
+        <div class='col-md-2 col-md-offset-10 right-sidebar sticky'>
+          <div class="sticky-sidebar">
+            <% if logged_in? %>
+              Admin mode
+              <%= link_to "(logout)", logout_path %><br>
+              <%= link_to "Create a New Article", new_article_path, class: 'new_article' %><br>
+            <% end %>
+            <br>
+            <div class='about'>
+              <%= link_to image_tag('about_us3.png'), about_path %>
+            </div>
+            <div class='categories'>
+              <h1>Categories</h1>
+              <ul>
+                <li><%= link_to tag_path('popular') do %><div class='pixel' style='background-color: #2FB8FF;'></div>Popular<% end %></li>
+                <li><%= link_to tag_path('relationships') do %><div class='pixel' style='background-color: #FE89F2;'></div>Relationships<% end %></li>
+                <li><%= link_to tag_path('happiness') do %><div class='pixel' style='background-color: #16DFCD;'></div>Happiness<% end %></li>
+                <li><%= link_to tag_path('spirituality') do %><div class='pixel' style='background-color: #6174EC;'></div>Spirituality<% end %></li>
+                <li><%= link_to tag_path('finance') do %><div class='pixel' style='background-color: #FFB66E;'></div>Finance<% end %></li>
+                <li><%= link_to tag_path('health') do %><div class='pixel' style='background-color: #91F6FE;'></div>Health<% end %></li>
+                <li><%= link_to tag_path('creativity') do %><div class='pixel' style='background-color: #4566BA;'></div>Creativity<% end %></li>
+              </ul>
+            </div>
+            <div class='email-newsletter'>
+              <form class="email-form">
+                <input type="text" id="email" name="email" placeholder="Enter Email">
+                <button>Sign Up</button>
+                <div class="message"></div>
+              </form>
+            </div>
           </div>
         </div>
 

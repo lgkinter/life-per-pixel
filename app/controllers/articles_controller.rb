@@ -4,12 +4,17 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new
     @comment.article_id = @article.id
+    @article.increment_view_count
   end
 
   def new
@@ -18,9 +23,13 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    @article.save
-    flash.notice = "'#{@article.title}' has been created."
-    redirect_to article_path(@article)
+    if @article.save
+      flash.notice = "'#{@article.title}' has been created."
+      redirect_to article_path(@article)
+    else
+      flash.now[:notice] = "Unable to create new article."
+      render :new
+    end
   end
 
   def destroy

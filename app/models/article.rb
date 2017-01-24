@@ -1,8 +1,14 @@
 class Article < ApplicationRecord
+  include ActionView::Helpers
   has_many :comments
   has_many :taggings
   has_many :tags, through: :taggings
-  has_attached_file :image, styles: { medium: "500x500", thumb: "100x100" }
+  default_scope -> { order(created_at: :desc) }
+  validates :title, presence: true
+  validates :hover_text, presence: true
+  validates :category, presence: true
+  validates :body, presence: true
+  has_attached_file :image, styles: { medium: "478x478", thumb: "16x16" }
   validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
   before_save :downcase_category
 
@@ -20,6 +26,18 @@ class Article < ApplicationRecord
 
   def downcase_category
     self.category.downcase!
+  end
+
+  def increment_view_count
+    if self.view_count.nil?
+      self.update_attribute('view_count', 1)
+    else
+      self.update_attribute('view_count', self.view_count += 1)
+    end
+  end
+
+  def intro
+    truncate(strip_tags(RedCloth.new(self.body).to_html), length: 200)
   end
 
 end

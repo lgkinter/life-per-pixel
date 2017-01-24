@@ -1,3 +1,65 @@
+
+
+.col-md-2 {
+    width: 20%;
+}
+.col-md-10 {
+    width: 80%;
+}
+.col-md-offset-10 {
+    margin-left: 80%;
+}
+
+.email-newsletter {
+  width: 100%;
+  font-family: 'Calibri', helvetica;
+  font-weight: 300;
+  font-size: 20px;
+  margin-top: 20px;
+  background-image: url("email.jpg");
+  background-repeat: no-repeat;
+}
+
+.email-newsletter input {
+  width: 167px;
+  border: solid 1px #e5e5e5;
+  font-size: 16px;
+  font-weight: normal;
+  padding: 10px;
+  margin: 185px 0 8px 13px;
+}
+
+.email-newsletter button {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #6174EC; /*8f8fea;*/
+  border: 0;
+  padding: 10px;
+  margin: 0 0 20px 13px;
+  width: 167px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  transition: all .3s;
+  cursor: pointer;
+  overflow: visible;
+  text-align: center;
+}
+
+.comment-section {
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 300;
+}
+.comment-name {
+  font-weight: 700;
+}
+.comment-time {
+  color: #8f8f8f;
+  font-size: 12px;
+  font-weight: 500;
+}
+
 body {
   width: 960px;
   margin: 0 auto;
@@ -60,7 +122,7 @@ body {
 }
 
 .grid{
-  height: 400px; /*417*/
+  height: 400px;
   width: 240px;
   margin: 5px auto;
   padding: 0px;
@@ -69,14 +131,14 @@ body {
 }
 
 .mindsq{
-  background-color: rgb(70, 243, 189);
+  background-color: #2FB8FF; /* Brilliant azure */
 }
 .bodysq{
-  background-color: #1fadd1;
+  background-color: #FE89F2; /* Light fuchsia pink */
   margin: 0 7px 0 0px;
 }
 .bodybar{
-  background-color: #1fadd1;
+  background-color: #FE89F2;
   opacity: 0.1;
   margin: 0 7px 0 0;
   height: 16px;
@@ -85,10 +147,10 @@ body {
   display: inline-block;
 }
 .soulsq{
-  background-color: rgb(189, 0, 84);
+  background-color: #16DFCD; /* Bright turquoise */
 }
 .soulbar{
-  background-color: rgb(189, 0, 84);
+  background-color: #16DFCD; /* Bright turquoise */
   opacity: 0.1;
   margin: 0 7px 0 0;
   height: 16px;
@@ -97,10 +159,10 @@ body {
   display: inline-block;
 }
 .propsq{
-  background-color: rgb(255, 84, 72);
+  background-color: #6174EC; /* Cornflower Blue */
 }
 .propbar{
-  background-color: rgb(255, 84, 72);
+  background-color: #6174EC;
   opacity: 0.1;
   margin: 0 7px 0 0;
   height: 16px;
@@ -133,16 +195,22 @@ html, body, .container-fluid, .row {
 .content {
   line-height: 30px;
   hyphens: auto;
-  font-family: 'Open Sans', helvetica;
+  font-family: 'Calibri', helvetica;
+  font-weight: 300;
+  font-size: 20px;
   word-wrap: break-word;
 }
 
-h3 {
+h1, h2, h3 {
   font-family: 'Open Sans Condensed', helvetica;
-  font-size: 1.75em;
 }
 
+h1 { font-size: 1.75em; }
+h2 { font-size: 1.25em; }
+h3 { font-size: 1em; }
+
 .right-sidebar{
+  position: relative;
   text-align: left;
   padding: 0;
   margin: 0;
@@ -176,6 +244,12 @@ h3 {
   .minilogo {
     display: none;
   }
+}
+
+.flash {
+  font-size: .75em;
+  color: red;
+  font-style: italic;
 }
 
 @media (min-width: 1040px) {
