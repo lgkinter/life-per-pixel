@@ -1,8 +1,96 @@
 <% provide(:title, "Books | Life Per Pixel") %>
-<h1>Top 20 Spiritual Books of All Time</h1>
-<h3>Books that will change your view of the world</h3>
-<ul>
-  <li>Book 1</li>
-  <li>Book 2</li>
-  <li>Book 3</li>
-</ul>
+<%= image_tag('books_header.jpg') %>
+<h3 class='books-subheader'>Top Spiritual Books That Will Change Your View of the World</h3><br>
+<div class="books">
+
+  <div class= "row">
+    <div class="col-md-5">
+      <%= link_to 'http://www.amazon.com/gp/product/1608871576/' do %>
+        <div class="book-image"><%= image_tag('journey.jpg') %></div>
+        <div class="book-rating"><%= image_tag('99.png') %></div>
+      <% end %>
+    </div>
+    <div class="col-md-7 tool-description">
+      <h2><%= link_to 'The Journey Within', 'http://www.amazon.com/gp/product/1608871576/' %></h2>
+      <h4>by Radhanath Swami</h4>
+      Pellentesque a tincidunt est. Morbi tristique ligula ac suscipit interdum.
+      Integer ultricies neque quis ligula efficitur sagittis.
+      Aliquam a convallis sem, ac tempor quam.Sed gravida interdum massa,
+      sed auctor tellus molestie at. Nunc interdum sapien sit amet dui sodales,
+      et interdum urna accumsan.
+    </div>
+  </div><hr>
+
+  <div class= "row">
+    <div class="col-md-5">
+      <%= link_to 'http://www.amazon.com/Fervent-Womans-Serious-Specific-Strategic/dp/1433688670' do %>
+        <div class="book-image"><%= image_tag('fervent.jpg') %></div>
+        <div class="book-rating"><%= image_tag('93.png') %></div>
+      <% end %>
+    </div>
+    <div class="col-md-7 tool-description">
+      <h2><%= link_to "Fervent: A Woman's Battle Plan to Serious, Specific and Strategic Prayer", 'http://www.amazon.com/Fervent-Womans-Serious-Specific-Strategic/dp/1433688670' %></h2>
+      <h4>by Priscilla Shirer</h4>
+      Pellentesque a tincidunt est. Morbi tristique ligula ac suscipit interdum.
+      Integer ultricies neque quis ligula efficitur sagittis.
+      Aliquam a convallis sem, ac tempor quam.Sed gravida interdum massa,
+      sed auctor tellus molestie at. Nunc interdum sapien sit amet dui sodales,
+      et interdum urna accumsan.
+    </div>
+  </div><hr>
+
+  <div class= "row">
+    <div class="col-md-5">
+      <%= link_to 'http://www.amazon.com/No-Greater-Love-Mother-Teresa/dp/1577312015/' do %>
+        <div class="book-image"><%= image_tag('nogreaterlove.jpg') %></div>
+        <div class="book-rating"><%= image_tag('90.png') %></div>
+      <% end %>
+    </div>
+    <div class="col-md-7 tool-description">
+      <h2><%= link_to 'No Greater Love', 'http://www.amazon.com/No-Greater-Love-Mother-Teresa/dp/1577312015/' %></h2>
+      <h4>by Mother Teresa</h4>
+      Pellentesque a tincidunt est. Morbi tristique ligula ac suscipit interdum.
+      Integer ultricies neque quis ligula efficitur sagittis.
+      Aliquam a convallis sem, ac tempor quam.Sed gravida interdum massa,
+      sed auctor tellus molestie at. Nunc interdum sapien sit amet dui sodales,
+      et interdum urna accumsan.
+    </div>
+  </div><hr>
+
+  <div class= "row">
+    <div class="col-md-5 books">
+      <%= link_to 'http://www.amazon.com/gp/product/1590309634/' do %>
+        <div class="book-image"><%= image_tag('livingbeautifully.jpg') %></div>
+        <div class="book-rating"><%= image_tag('88.png') %></div>
+      <% end %>
+    </div>
+    <div class="col-md-7 tool-description">
+      <h2><%= link_to 'Living Beautifully: with Uncertainty and Change', 'http://www.amazon.com/gp/product/1590309634/' %></h2>
+      <h4>by Pema Chödrön</h4>
+      Pellentesque a tincidunt est. Morbi tristique ligula ac suscipit interdum.
+      Integer ultricies neque quis ligula efficitur sagittis.
+      Aliquam a convallis sem, ac tempor quam.Sed gravida interdum massa,
+      sed auctor tellus molestie at. Nunc interdum sapien sit amet dui sodales,
+      et interdum urna accumsan.
+    </div>
+  </div><hr>
+
+  <div class= "row">
+    <div class="col-md-5">
+      <%= link_to 'http://www.amazon.com/Autobiography-Yogi-P-Yogananda/dp/8120725247' do %>
+        <div class="book-image"><%= image_tag('yogi.jpg') %></div>
+        <div class="book-rating"><%= image_tag('85.png') %></div>
+      <% end %>
+    </div>
+    <div class="col-md-7 tool-description">
+      <h2><%= link_to 'Autobiography of a Yogi', 'http://www.amazon.com/Autobiography-Yogi-P-Yogananda/dp/8120725247' %></h2>
+      <h4>by Paramahansa Yogananda</h4>
+      Pellentesque a tincidunt est. Morbi tristique ligula ac suscipit interdum.
+      Integer ultricies neque quis ligula efficitur sagittis.
+      Aliquam a convallis sem, ac tempor quam.Sed gravida interdum massa,
+      sed auctor tellus molestie at. Nunc interdum sapien sit amet dui sodales,
+      et interdum urna accumsan.
+    </div>
+  </div><hr>
+
+</div>

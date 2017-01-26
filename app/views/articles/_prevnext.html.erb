@@ -1,0 +1,22 @@
+  <div class='row prev-next-links'>
+    <div class='col-xs-6 col-sm-6 col-md-6'>
+      <% if @article.previous %>
+        <%= link_to @article.previous do %>
+          <p class="prev-next-buttons"><<  Previous</p>
+          <%= image_tag @article.previous.image(:thumb) %><br>
+          <p class="button-title"><%= @article.previous.title %></p>
+        <% end %>
+      <% end %>
+    </div>
+    <div class='col-xs-6 col-sm-6 col-md-6'>
+      <div class='pull-right'>
+      <% if @article.next %>
+        <%= link_to @article.next do %>
+          <p class="prev-next-buttons">Up Next  >></p>
+          <%= image_tag @article.next.image(:thumb) %>
+          <p class="button-title"><%= @article.next.title %></p>
+          <% end %>
+      <% end %>
+      </div>
+    </div>
+  </div>

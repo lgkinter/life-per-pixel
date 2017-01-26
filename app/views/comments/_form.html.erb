@@ -1,14 +1,6 @@
 <h3>Join the discussion</h3>
 <%= form_for [ @article, @comment ] do |f| %>
-  <p>
-    <%= f.label :author_name, "Your Name" %><br>
-    <%= f.text_field :author_name %>
-  </p>
-  <p>
-    <%= f.label :body, "Your Comment" %><br>
-    <%= f.text_area :body, :rows => 5 %>
-  </p>
-  <p>
-    <%= f.submit "Share" %>
-  </p>
+  <p><%= f.text_field :author_name, placeholder: "Enter Name" %></p>
+  <p><%= f.text_area :body, placeholder: "Join the discussion...", rows: 5 %></p>
+  <p><%= f.submit "Share" %></p>
 <% end %>

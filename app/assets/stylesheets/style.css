@@ -46,7 +46,8 @@
   text-align: center;
 }
 
-.comment-section {
+/*
+.comments {
   font-size: 15px;
   line-height: 20px;
   font-weight: 300;
@@ -60,10 +61,68 @@
   font-weight: 500;
 }
 
+.comment-section > hr {
+  margin-top: 8px;
+}
+*/
+
+.comment-section h2{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 body {
   width: 960px;
   margin: 0 auto;
 }
+
+.listings hr {
+  margin-top: 40px;
+  margin-bottom: 25px;
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #606060;
+}
+
+.tags {
+  font-size: .75em;
+  text-transform: uppercase;
+}
+
+.tags a {
+  color: #8f8f8f;
+}
+
+.tags a:hover {
+  color: #000;
+}
+
+.tags a:before {
+    color: #5e5e5e;
+    content: "\a·\a";
+}
+
+.prev-next-buttons {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  text-align: left;
+  width: 100px;
+}
+
+.button-title {
+  text-align: left;
+  width: 100px;
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 25px;
+}
+
 .navbar {
   min-height: 0;
   font-family: 'Open Sans Condensed', sans-serif;
@@ -109,9 +168,12 @@ body {
   z-index: 2;
 }
 
-.navbar a {
+.navbar a, .categories a {
   color: #8f8f8f;
   text-decoration: none;
+}
+.navbar a:hover, .categories a:hover {
+  color: #bababa;
 }
 
 .navbar ul {
@@ -206,8 +268,12 @@ h1, h2, h3 {
 }
 
 h1 { font-size: 1.75em; }
-h2 { font-size: 1.25em; }
+h2 { font-size: 1.5em; }
 h3 { font-size: 1em; }
+h4 {
+  font-size: 0.8em;
+  font-style: italic;
+}
 
 .right-sidebar{
   position: relative;
@@ -228,11 +294,6 @@ h3 { font-size: 1em; }
   padding: 0;
 }
 
-.categories a {
-  color: #8f8f8f;
-  text-decoration: none;
-}
-
 @media (min-width: 768px) {
   #sidebar-wrapper.sidebar-toggle {
     transition: 0s;
@@ -250,6 +311,51 @@ h3 { font-size: 1em; }
   font-size: .75em;
   color: red;
   font-style: italic;
+}
+
+.tool-img {
+  padding: 0 0 0 10px;
+}
+
+.tool-description {
+  font-family: 'Calibri', helvetica;
+}
+
+.tools-subheader {
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #FE89F2;
+  text-align: center;
+}
+
+.best {
+  text-transform: uppercase;
+  color: #8f8f8f;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+.tools > hr {
+  margin-top: 10px;
+}
+
+.books-subheader {
+  font-weight: bold;
+  font-size: 1.15em;
+  color: #2FB8FF; /* Brilliant azure */
+  text-align: center;
+}
+
+.book-rating{
+  position: absolute;
+  z-index: 2;
+}
+
+.book-image{
+  position: absolute;
+  z-index: 1;
+  margin-left: 35px;
+  margin-top: 35px;
 }
 
 @media (min-width: 1040px) {

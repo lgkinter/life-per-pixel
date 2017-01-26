@@ -8,7 +8,7 @@ class Article < ApplicationRecord
   validates :hover_text, presence: true
   validates :category, presence: true
   validates :body, presence: true
-  has_attached_file :image, styles: { medium: "478x478", thumb: "16x16" }
+  has_attached_file :image, styles: { medium: "478x478", thumb: "100x100", pixel: "16x16"}
   validates_attachment_content_type :image, :content_type => ['image/jpg', 'image/jpeg', 'image/png']
   before_save :downcase_category
 
@@ -38,6 +38,14 @@ class Article < ApplicationRecord
 
   def intro
     truncate(strip_tags(RedCloth.new(self.body).to_html), length: 200)
+  end
+
+  def previous
+    Article.where(['id < ?', id]).first
+  end
+
+  def next
+    Article.where(['id > ?', id]).last
   end
 
 end

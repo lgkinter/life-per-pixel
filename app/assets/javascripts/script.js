@@ -2,15 +2,24 @@ var setSize  = 16;
 var listing_arr = ["", "mind", "body", "soul", "prosperity", "tags"]
 /* These are the pages that have listings of pixels */
 
-$(window).on('resize', function(){
+$(window).on('load resize', function(){
       var win = $(this); //this = window
       if (win.width() <= 752) {
-        /*$('.grid').css('display', 'none');*/
+        $('.right-sidebar').css('display', 'none');
+        $('.col-md-10').css('width', '100%');
+        $('.col-md-5').css('min-height', '270px');
+        $('body').css('width', '100%');
         document.getElementsByClassName("sidebar-toggle")[0].style.left="-240px";
       }else if (win.width() <= 1025){
+        $('.col-md-10').css('width', '100%');
+        $('.col-md-5').css('min-height', '270px');
+        $('body').css('width', '100%');
         document.getElementsByClassName("sidebar-toggle")[0].style.left="0px";
       }else{
-        /*$('.grid').css('display', 'block');*/
+        $('.right-sidebar').css('display', 'block');
+        $('.col-md-10').css('width', '80%');
+        $('.col-md-5').css('min-height', '1px');
+        $('body').css('width', '');
         document.getElementsByClassName("sidebar-toggle")[0].style.left="auto";
       }
 });
